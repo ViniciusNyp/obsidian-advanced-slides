@@ -60,7 +60,7 @@ export interface AdvancedSlidesSettings {
 }
 
 const DEFAULT_SETTINGS: AdvancedSlidesSettings = {
-	port: '3000',
+	port: '5174',
 	autoReload: true,
 	autoStart: true,
 	exportDirectory: '/export',
@@ -149,7 +149,7 @@ export default class AdvancedSlidesPlugin extends Plugin {
 		if (this.settings.autoStart) {
 			this.revealServer.start();
 		}
-		
+
 
 		try {
 			this.registerView(REVEAL_PREVIEW_VIEW, leaf => new RevealPreviewView(leaf, this.revealServer.getUrl(), this.settings, this.hideView.bind(this)));
@@ -374,25 +374,25 @@ export default class AdvancedSlidesPlugin extends Plugin {
 			mod.containerEl.addClass('releaseNotes');
 			mod.titleEl.createEl('h2', { text: 'Letter from Advanced Slides Development' });
 
-			const html = `Dear Advanced Slides user,<br><br> 
+			const html = `Dear Advanced Slides user,<br><br>
 		every beginning is difficult. As a leading user of Advanced Slides, you know how handy it was when you found wide documentation as well as help from the developers on the Obsidian forum or discord to get started with Advanced Slides.<br><br>
-		
 
-		With over <b>240.000</b> downloads and over <b>40.000</b> users using Advanced Slides every day, Advanced Slides is on of the top 10 plugins for Obsidian. 
+
+		With over <b>240.000</b> downloads and over <b>40.000</b> users using Advanced Slides every day, Advanced Slides is on of the top 10 plugins for Obsidian.
 		<br><br>
 
-		
+
 		However, with the growing number of users, the expenses for support also increase.<br>
 		On average we get <b>50-60</b> support requests via twitter, github, discord, forum or private message every week.
 		We invest <b>3-5</b> hours every week to answer these requests.<br> We do that in our free time.<br><br>
 
 
 		It is hard to keep pace and provide new users the same quality in their onboarding that you had before.
-		
-		This is where you come into play. 
-		
+
+		This is where you come into play.
+
 		A sponsorship of you allows the developers of Advanced Slides to spend more time on community work to give new users the same user experience you had when you started your Advanced Slides journey.
-		
+
 		<br><br>
 		<a href="https://github.com/sponsors/MSzturc">Become a Sponsor</a>
 
@@ -515,7 +515,7 @@ class AdvancedSlidesSettingTab extends PluginSettingTab {
 		new Setting(containerEl)
 			.setName('Auto Start Server')
 			.setDesc('Should Advanced Slides Preview server be started at Obsidian startup? (default: true)')
-			.addToggle(value => 
+			.addToggle(value =>
 				value
 					.setValue(this.plugin.settings.autoStart)
 					.onChange(
@@ -528,10 +528,10 @@ class AdvancedSlidesSettingTab extends PluginSettingTab {
 
 		new Setting(containerEl)
 			.setName('Port')
-			.setDesc('On which port should Advanced Slides run? (default: 3000)')
+			.setDesc('On which port should Advanced Slides run? (default: 5174)')
 			.addText(text =>
 				text
-					.setPlaceholder('3000')
+					.setPlaceholder('5174')
 					.setValue(this.plugin.settings.port)
 					.onChange(
 						_.debounce(async value => {

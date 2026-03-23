@@ -7,7 +7,7 @@ import { ObsidianUtils } from './obsidianUtils';
 
 export class RevealServer {
 	private _app: express.Application;
-	private _port = 3000;
+	private _port = 5174;
 	private _server: Server;
 	//TODO: get rid of base & plugin dir
 	private _baseDirectory: string;
@@ -18,7 +18,7 @@ export class RevealServer {
 
 	constructor(utils: ObsidianUtils, port: string) {
 		const numPort = Number(port);
-		this._port = isNaN(numPort) ? 3000 : numPort;
+		this._port = isNaN(numPort) ? 5174 : numPort;
 		this._baseDirectory = utils.getVaultDirectory();
 		this._pluginDirectory = utils.getPluginDirectory();
 		this._app = express();
